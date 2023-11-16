@@ -41,18 +41,19 @@ public class OperationServlet extends HttpServlet {
 	    PrintWriter out = response.getWriter();  
 	          
 	    String operation = request.getParameter("operation");
-	    
+	    RequestDispatcher rd = null;
 	          
 	    if(operation.equals("multiply")){  
-	        RequestDispatcher rd=request.getRequestDispatcher("/MultiplicationServlet");  
-	        rd.forward(request, response);  
+	        rd=request.getRequestDispatcher("/MultiplicationServlet");  
+	        // rd.forward(request, response);  
 	    }  
 	    else{  
 	       
-	        RequestDispatcher rd=request.getRequestDispatcher("/AdditionServlet");  
-	        rd.forward(request, response);  
+	        rd=request.getRequestDispatcher("/AdditionServlet");  
+	        // rd.forward(request, response);  
 	                      
 	        }  
+		   rd.forward(request, response); 
 	    }  
 
 }
